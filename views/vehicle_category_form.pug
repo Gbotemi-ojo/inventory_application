@@ -1,0 +1,14 @@
+extends layout
+block content
+  form(action="", method="post") 
+    div
+        label(for='vehicle_name') Name
+        input#vehicle_name(type='text', placeholder='enter category name', name='name' value=(undefined=== category ? '' :  category.name))
+    div
+        label(for='') Description
+        textarea(id='', cols='30', rows='10', placeholder='enter category description' name='description' value=(undefined=== category ? '' :  category.description))
+    button.submit-btn(type='submit') Submit
+  if errors
+   ul
+    for error in errors
+     li!= error.msg

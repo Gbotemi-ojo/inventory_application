@@ -1,0 +1,17 @@
+extends layout
+block content
+  if Vehicles.length
+   div
+      h2 Delete the following vehicles before you can delete category : #{vehicle_cat.name}
+      h1 vehicles
+      ul
+      each vehicle in Vehicles
+          li
+           a(href=vehicle.url) #{vehicle.name}
+           div #{vehicle.description}    
+  else if Vehicles.length === 0
+        p Do you really want to delete #{vehicle_cat.name}?
+        form(method='POST' action='')
+          div
+            input(type='hidden',name='vehicle_category_id', required='true', value=vehicle_cat._id )
+            button(type='submit') Delete

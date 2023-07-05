@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Shuttlers
+    style
+     include ../stylesheet/style.css
+  body
+    div.inventory-application-container
+      header INVENTORY APPLICATION
+      main
+        div
+          ul
+            li
+              a(href='/') Home
+            li
+              a(href='/home/all_vehicle_category') All vehicle categories
+            li
+              a(href='/home/all_vehicle') All vehicle
+            hr
+            li
+              a(href='/home/vehicle_category_form') Create vehicle category
+            li
+              a(href='/home/vehicle_form') Create Vehicle
+        block content
+      footer The future engineers network --Ojo Gbotemi

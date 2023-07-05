@@ -1,0 +1,11 @@
+extends layout
+block content
+     div.Vehicle_list_container
+      h1 All Vehicles
+      div.Vehicle_list
+       each vehicle in vehicle_list
+        div
+          h2 
+           a(href=vehicle.url) #{vehicle.name}
+          div #{vehicle.description}
+          

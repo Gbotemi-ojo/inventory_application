@@ -1,0 +1,30 @@
+extends layout
+block content
+  form(action="", method="post") 
+    div.form-group
+      div
+       label(for='category') Category:
+       select.vehicle-category(type='select', placeholder='Select category' name='category' required='true' )
+            for category in categories
+             if vehicle
+               option(value=category._id selected=(category._id.toString()===vehicle.category._id.toString() ? 'selected' : false) ) #{category.name}
+             else
+               option(value=category._id) #{category.name}
+      div
+        label(for='vehicle_name') Name
+        input#vehicle_name(type='text', placeholder='enter the name of the vehicle', name='name' value=(undefined===vehicle ? '' : vehicle.name))
+      div
+        label(for='') Description
+        textarea(id='', cols='30', rows='10', placeholder='enter vehicle description' name='description' value=(undefined===vehicle ? '' : vehicle.description))
+      div
+        label(for='') price
+        input(type='number', placeholder='enter car price' name='price' value=(undefined===vehicle ? '' : vehicle.price))
+      div
+        label(for='') number_in_stock
+        input(type='number', placeholder='enter number in stock' name='number_in_stocks' value=(undefined===vehicle ? '' : vehicle.number_in_stocks))      
+    button.submit-btn(type='submit') Submit
+  if errors
+   ul
+    for error in errors
+     li!= error.msg
+

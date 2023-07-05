@@ -1,0 +1,14 @@
+extends layout
+block content
+     div.vehicle_details_container
+      h1 vehicle details
+      div Name : #{vehicle.name}
+      div description: #{vehicle.description}
+      div Category : #{vehicle.category.name}
+      div price : #{vehicle.price}
+      div number_in_stock : #{vehicle.number_in_stocks}
+      div.action-container
+       p.btn
+         a(href=vehicle.url+'/delete') Delete vehicle
+       p.btn
+        a(href=vehicle.url+'/update') Update vehicle

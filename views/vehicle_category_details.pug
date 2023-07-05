@@ -1,0 +1,19 @@
+extends layout
+block content
+     .vehicle_category_details
+      h1 #{vehicle_category.name}
+      h3 #{vehicle_category.description}
+      div.action-container
+        p.btn
+          a(href=vehicle_category.url+'/delete') Delete category
+        p.btn
+          a(href=vehicle_category.url+'/update') Update category
+      hr
+      h1 vehicle lists in this category
+      ol
+       for vehicle in vehicles
+        li
+         a(href=vehicle.url)
+          div
+            div #{vehicle.name}
+            div #{vehicle.description}

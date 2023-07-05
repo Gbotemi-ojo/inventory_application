@@ -1,0 +1,9 @@
+extends layout
+block content
+     div.vehicle_category_list
+      h2 All vehicle categories
+      .vehicle_category_container
+        ul
+         for vehicle in vehicle_category_list
+          li
+            a(href=`all_vehicle_category/${vehicle._id}`) #{vehicle.name}

@@ -1,0 +1,9 @@
+extends layout
+block content    
+    p Do you really want to delete this Vehicle?
+
+    form(method='POST' action='')
+      div
+        input#authorid.form-control(type='hidden',name='vehicleid', required='true', value=vehicle._id )
+        button.btn.btn-primary(type='submit') Delete
+        
