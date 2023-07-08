@@ -1,3 +1,5 @@
+require('dotenv').config()
+console.log(process.env.password);
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -10,9 +12,8 @@ var usersRouter = require('./routes/users');
 const homeRouter = require('./routes/home');
 
 var app = express();
-
 mongoose.set("strictQuery", false);
-const dev_db_url = "mongodb+srv://Gbotemi:O9lnUB2jiQcUPdo2@cluster0.vndnniu.mongodb.net/?retryWrites=true&w=majority";
+const dev_db_url = `mongodb+srv://${process.env.user_name}:${process.env.password}@cluster0.vndnniu.mongodb.net/?retryWrites=true&w=majority`;
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 
